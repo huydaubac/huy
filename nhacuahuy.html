@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thảo Dược Làm Đẹp - Cửa Hàng Online</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #fffaf2;
+            color: #4a4a4a;
+        }
+        header {
+            background-color: #6d8f72;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        nav {
+            margin-top: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #d9d4c7;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            padding: 0 1rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #92b98d;
+            border: none;
+            padding: 0.85rem 2rem;
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(146,185,141,0.5);
+        }
+        .btn-primary:hover {
+            background-color: #789b70;
+        }
+        main {
+            max-width: 1100px;
+            margin: 2rem auto 4rem;
+            padding: 0 1rem;
+        }
+        section.products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(146,185,141,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(146,185,141,0.6);
+        }
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 2px solid #92b98d;
+        }
+        .product-info {
+            padding: 1rem 1.5rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0.5rem 0 0.75rem;
+            color: #4a4a4a;
+        }
+        .product-description {
+            font-size: 0.9rem;
+            color: #666;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #789b70;
+        }
+        footer {
+            background-color: #6d8f72;
+            color: white;
+            text-align: center;
+            padding: 1.7rem 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Thảo Dược Làm Đẹp
+        <nav>
+            <a href="#products">Sản phẩm</a>
+            <a href="#about">Về chúng tôi</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+    </header>
+    <section class="hero" role="banner" aria-label="Trang chủ thảo dược làm đẹp">
+        <h1>Thảo Dược Tự Nhiên Cho Làn Da Khỏe Đẹp</h1>
+        <p>Khám phá các sản phẩm thảo mộc thiên nhiên giúp bạn nâng niu làn da, giữ mãi nét tươi trẻ.</p>
+        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Mua Ngay</button>
+    </section>
+    <main>
+        <section id="products" class="products" aria-label="Danh sách sản phẩm thảo dược">
+            <article class="product-card" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1606312617920-e7e0ddf98f0c?auto=format&fit=crop&w=600&q=80" alt="Bột nghệ" class="product-image" />
+                <div class="product-info">
+                    <h2 class="product-title">Bột Nghệ</h2>
+                    <p class="product-description">Tinh bột nghệ nguyên chất giúp làm sáng da, mờ thâm nám, và kháng viêm hiệu quả.</p>
+                    <p class="product-price">90,000 VND</p>
+                </div>
+            </article>
+            <article class="product-card" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1562157875-3fcaa0a9e3e0?auto=format&fit=crop&w=600&q=80" alt="Bột trà xanh" class="product-image" />
+                <div class="product-info">
+                    <h2 class="product-title">Bột Trà Xanh</h2>
+                    <p class="product-description">Bột trà xanh mịn màng, giàu chất chống oxy hóa giúp làm sạch da và chống lão hóa.</p>
+                    <p class="product-price">110,000 VND</p>
+                </div>
+            </article>
+            <article class="product-card" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1578964405020-730dad9b2549?auto=format&fit=crop&w=600&q=80" alt="Bột đậu đỏ" class="product-image" />
+                <div class="product-info">
+                    <h2 class="product-title">Bột Đậu Đỏ</h2>
+                    <p class="product-description">Bột đậu đỏ tự nhiên giúp làm đều màu da, giảm thâm sạm và dưỡng da mềm mịn.</p>
+                    <p class="product-price">85,000 VND</p>
+                </div>
+            </article>
+            <article class="product-card" tabindex="0">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Combo làm đẹp thảo dược" class="product-image" />
+                <div class="product-info">
+                    <h2 class="product-title">Combo Làm Đẹp</h2>
+                    <p class="product-description">Combo gồm Bột Nghệ, Bột Trà Xanh và Bột Đậu Đỏ giúp dưỡng da toàn diện, sáng mịn và đều màu.</p>
+                    <p class="product-price">260,000 VND</p>
+                </div>
+            </article>
+        </section>
+        <section id="about" style="margin-top:4rem;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; color: #6d8f72;">
+                Về Chúng Tôi
+            </h2>
+            <p style="max-width: 700px; line-height: 1.5; font-size: 1.1rem; color: #555;">
+                Chúng tôi cam kết mang đến những sản phẩm thảo dược thiên nhiên chất lượng, an toàn cho làn da bạn. Với sự kết hợp giữa truyền thống và công nghệ hiện đại, mọi sản phẩm đều được chọn lọc kỹ càng, giúp bạn tự tin tỏa sáng với làn da khỏe mạnh, rạng rỡ.
+            </p>
+        </section>
+        <section id="contact" style="margin-top:4rem;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; color: #6d8f72;">
+                Liên Hệ
+            </h2>
+            <p style="font-size: 1.1rem; color: #555;">
+                Số điện thoại: <strong>0332814005</strong><br />
+                Facebook: <a href="https://www.facebook.com/profile.php?id=61576700514052" target="_blank" style="color: #6d8f72; text-decoration: underline;">Xem trang Facebook</a>
+            </p>
+            <form id="contactForm" style="max-width: 700px;" aria-label="Form liên hệ đặt hàng thảo dược">
+                <label for="name" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Tên của bạn:</label>
+                <input type="text" id="name" name="name" required style="width:100%; padding: 0.7rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #bbb; font-size: 1rem;" />
+                
+                <label for="email" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Email:</label>
+                <input type="email" id="email" name="email" required style="width:100%; padding: 0.7rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #bbb; font-size: 1rem;" />
+                
+                <label for="message" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Lời nhắn / Đặt hàng:</label>
+                <textarea id="message" name="message" rows="5" required style="width:100%; padding: 0.7rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #bbb; font-size: 1rem;"></textarea>
+                
+                <button type="submit" class="btn-primary" style="width: 100%;">Gửi</button>
+            </form>
+            <p id="formResponse" role="alert" style="margin-top:1rem; font-weight: 700; color: #4a4a4a;"></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Thảo Dược Làm Đẹp - Cửa Hàng Chính Hãng
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const message = this.message.value.trim();
+            if(name === '' || email === '' || message === '') {
+                alert('Vui lòng điền đầy đủ thông tin!');
+                return;
+            }
+            // Simple Email format validation
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if(!emailRegex.test(email)) {
+                alert('Email không hợp lệ!');
+                return;
+            }
+            // Since no backend, simulate submission and thank you message
+            this.reset();
+            const response = document.getElementById('formResponse');
+            response.textContent = `Cảm ơn ${name}, chúng tôi sẽ liên hệ lại với bạn sớm nhất!`;
+        });
+    </script>
+</body>
+</html>
+
